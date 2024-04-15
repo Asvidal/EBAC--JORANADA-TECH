@@ -13,7 +13,7 @@ let bestRNA = null;
 
 function fillDinoList ()
 {
-    for(let i=o; i < SAMPLES; i++)
+    for(let i=0; i < SAMPLES; i++)
     {
         dinoList[i] = new RNA(3, [10, 10, 2])
         dinoList[i].load(bestRNA)
@@ -68,10 +68,9 @@ setInterval(()=>
   const [obstacle] = horizon.obstacles
   .map((obstacle)=>
 {
-    return
-    {
-        x: obstacle.xPos
-        y: obstacle.yPos
+    return{
+        x: obstacle.xPos,
+        y: obstacle.yPos,
     }    
 })
 .filter((obstacle) => obstacle.x > player.x)
@@ -95,5 +94,5 @@ if (obstacle)
 
 /*const s = document.createElement('script');
 s.type = 'module';
-s.scr = 'https://localhost:5500/script.js'
+s.src = 'https://localhost:5500/script.js'
 document.body.appendChild(s);*/
